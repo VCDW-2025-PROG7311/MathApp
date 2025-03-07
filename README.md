@@ -11,8 +11,8 @@ This repo has been build to assist with understanding various aspects in this co
 * User can enter two numbers, select an option, and click calculate. Once calculated, the result is to be shown to the user and written to the SQL DB
 * User can review previous calculations stored in the DB (history)
 * User can clear previous calculations stored in the DB
-* Each user has their own history
-* Authentication with logging of errors
+* Each user has their own history (coming soon!)
+* Authentication with logging of errors (coming soon!)
 * Ensuring that divide by 0 does not happen
 
 ## Pre-Requisites
