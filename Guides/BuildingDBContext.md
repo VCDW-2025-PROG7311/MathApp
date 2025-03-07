@@ -33,7 +33,7 @@ Using the following commands in the Developer Command Prompt, connect the app to
 
 ### Adding the Connection String in Environment variables - OPTION 1 (in the code)
 
-1. Add the connection string for your SQL Server inside a system-wide environment variable named `Math_DB`.
+1. Add the connection string for your SQL Server inside a system-wide environment variable named `Math_DB`. This will need some research :-)
 
 2. Add the following code to your Program.cs class after `builder.Services.AddControllersWithViews();`:
     ```
