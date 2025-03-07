@@ -17,12 +17,7 @@ public partial class MathDbContext : DbContext
 
     public virtual DbSet<MathCalculation> MathCalculations { get; set; }
 
-    /*
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=EBRAHIM-LAPTOP;Database=Math_DB;Trusted_Connection=True;TrustServerCertificate=True;");
-    */
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<MathCalculation>(entity =>
         {
