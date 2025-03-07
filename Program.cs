@@ -4,10 +4,15 @@ using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+Console.WriteLine(Environment.GetEnvironmentVariable("Math_DB"));
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+//builder.Services.AddDbContext<MathDbContext>(options =>
+//                options.UseSqlServer(builder.Configuration.GetConnectionString("Math_DB")));
+
 builder.Services.AddDbContext<MathDbContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("Math_DB")));
+                options.UseSqlServer(Environment.GetEnvironmentVariable("Math_DB")));
 
 var app = builder.Build();
 
