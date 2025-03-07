@@ -398,3 +398,15 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+bin/Debug/net8.0/MathApp.dll
+bin/Debug/net8.0/MathApp.exe
+bin/Debug/net8.0/MathApp.pdb
+obj/Debug/net8.0/apphost.exe
+obj/Debug/net8.0/MathApp.AssemblyInfo.cs
+obj/Debug/net8.0/MathApp.AssemblyInfoInputs.cache
+obj/Debug/net8.0/MathApp.assets.cache
+obj/Debug/net8.0/MathApp.dll
+obj/Debug/net8.0/MathApp.GeneratedMSBuildEditorConfig.editorconfig
+obj/Debug/net8.0/MathApp.pdb
+obj/Debug/net8.0/ref/MathApp.dll
+obj/Debug/net8.0/refint/MathApp.dll
