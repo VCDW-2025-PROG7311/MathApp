@@ -27,3 +27,8 @@ It is highly recommended that you follow these steps in order:
 1. [Building the DB Context in MVC](/Guides/BuildingDBContext.md)
 1. [Building the Calculate Functionality](/Guides/BuildingCalculate.md)
 1. [Building the History Functionality](/Guides/BuildingHistory.md)
+1. [Adding Firebase Auth to the project](/Guides/AddingAuth.md)
+1. [Building the Register](/Guides/AddingRegister.md)
+1. [Building the Login](/Guides/AddingLogin.md)
+1. [Building the Logout](/Guides/AddingLogout.md)
+1. [Checking for session variables to confirm login status](/Guides/CheckingSessions.md)
