@@ -167,3 +167,6 @@ C:\Users\ebada\OneDrive\Desktop\PROG7311 2025\MathApp\MathApp\obj\Debug\net8.0\r
 C:\Users\ebada\OneDrive\Desktop\PROG7311 2025\MathApp\MathApp\obj\Debug\net8.0\MathApp.pdb
 C:\Users\ebada\OneDrive\Desktop\PROG7311 2025\MathApp\MathApp\obj\Debug\net8.0\MathApp.genruntimeconfig.cache
 C:\Users\ebada\OneDrive\Desktop\PROG7311 2025\MathApp\MathApp\obj\Debug\net8.0\ref\MathApp.dll
+C:\Users\ebada\OneDrive\Desktop\PROG7311 2025\MathApp\MathApp\bin\Debug\net8.0\Firebase.Auth.dll
+C:\Users\ebada\OneDrive\Desktop\PROG7311 2025\MathApp\MathApp\bin\Debug\net8.0\System.ServiceModel.dll
+C:\Users\ebada\OneDrive\Desktop\PROG7311 2025\MathApp\MathApp\bin\Debug\net8.0\Newtonsoft.Json.dll
