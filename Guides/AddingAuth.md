@@ -30,11 +30,14 @@
 1. Once added, create an `AuthController.cs` and add the following code which will initialize a FirebaseAuthProvider app using the environment variable:
 
     ```
-    FirebaseAuthProvider auth;
-
-    public AuthController()
+    public class AuthController : Controller
     {
-        auth = new FirebaseAuthProvider(new FirebaseConfig(Environment.GetEnvironmentVariable("FirebaseMathApp")));
+        FirebaseAuthProvider auth;
+
+        public AuthController()
+        {
+            auth = new FirebaseAuthProvider(new FirebaseConfig(Environment.GetEnvironmentVariable("FirebaseMathApp")));
+        }
     }
     ```
 
