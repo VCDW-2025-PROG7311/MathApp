@@ -2,7 +2,6 @@
 
 1. We need to add in a field to our DB to accommodate this change for our schema:
 
-
 ```
 ALTER TABLE MathCalculations
 ADD FirebaseUUID VARCHAR(512);
