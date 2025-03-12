@@ -32,3 +32,8 @@ It is highly recommended that you follow these steps in order:
 1. [Building the Login](/Guides/AddingLogin.md)
 1. [Building the Logout](/Guides/AddingLogout.md)
 1. [Checking for session variables to confirm login status](/Guides/CheckingSessions.md)
+1. [Introducing logging to a log file with Singleton Design Pattern for unsuccessful logins](/Guides/AddingLogging.md)
+1. [Amending the DB to accept UUID as FK](/Guides/AmendingDBToAcceptUUID.md)
+1. [Ensuring no divide by 0 using a Factory Design Pattern](/Guides/NoDivideZeroFactory.md)
+1. [Amending the code to cater for calculations per user](/Guides/AmendingCodeToCalcPerUser.md)
+1. [Amending the menu buttons for our auth](/Guides/CustomizingMenuForAuth.md)
