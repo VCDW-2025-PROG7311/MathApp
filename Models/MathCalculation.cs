@@ -5,6 +5,8 @@ namespace MathApp.Models;
 
 public partial class MathCalculation
 {
+    private MathCalculation() { }
+
     public int CalculationId { get; set; }
 
     public decimal? FirstNumber { get; set; }
@@ -15,6 +17,7 @@ public partial class MathCalculation
 
     public decimal? Result { get; set; }
 
+    public string? FirebaseUuid { get; set; }
 
     public static MathCalculation Create(decimal? firstNumber, decimal? secondNumber, int? operation, decimal? result, string? firebaseUuid)
     {
@@ -29,7 +32,7 @@ public partial class MathCalculation
             SecondNumber = secondNumber,
             Operation = operation,
             Result = result,
-            // FirebaseUuid = firebaseUuid
+            FirebaseUuid = firebaseUuid
         };
     }
 }

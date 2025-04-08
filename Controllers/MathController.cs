@@ -45,25 +45,34 @@ namespace MathApp.Controllers
                 return RedirectToAction("Login", "Auth");
             }
 
-            MathCalculation mathCalculation = new MathCalculation();
-            mathCalculation.FirstNumber = FirstNumber;
-            mathCalculation.SecondNumber = SecondNumber;
-            mathCalculation.Operation = Operation;
+            decimal? Result = 0;
+            MathCalculation mathCalculation;
+
+            try
+            {
+                mathCalculation = MathCalculation.Create(FirstNumber, SecondNumber, Operation, Result, token);
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = ex.Message;
+                return View();
+                throw;
+            }
+            
 
             switch (Operation)
             {
                 case 1:
-                    mathCalculation.Result = FirstNumber + SecondNumber;
+                    mathCalculation.Result = CalculationsUtil.Add(FirstNumber, SecondNumber);
                     break;
                 case 2:
-                    mathCalculation.Result = FirstNumber - SecondNumber;
+                    mathCalculation.Result = CalculationsUtil.Subtract(FirstNumber, SecondNumber);
                     break;
                 case 3:
-                    mathCalculation.Result = FirstNumber * SecondNumber;
+                    mathCalculation.Result = CalculationsUtil.Multiply(FirstNumber, SecondNumber);
                     break;
                 default:
-                    if (SecondNumber != 0)
-                        mathCalculation.Result = FirstNumber / SecondNumber;
+                    mathCalculation.Result = CalculationsUtil.Divide(FirstNumber, SecondNumber);
                     break;
             }
 
@@ -71,10 +80,10 @@ namespace MathApp.Controllers
             {
                 _context.Add(mathCalculation);
                 await _context.SaveChangesAsync();
-                    
+                
             }
             ViewBag.Result = mathCalculation.Result;
-
+            
             List<SelectListItem> operations = new List<SelectListItem> {
             new SelectListItem { Value = "1", Text = "+" },
             new SelectListItem { Value = "2", Text = "-" },
@@ -85,6 +94,9 @@ namespace MathApp.Controllers
             ViewBag.Operations = operations;
 
             return View();
+
+            // return RedirectToAction("Calculate");
+            
         }
         
         public async Task<IActionResult> History()
@@ -95,10 +107,11 @@ namespace MathApp.Controllers
                 return RedirectToAction("Login", "Auth");
             }
 
-            return View(await _context.MathCalculations.ToListAsync());
+            return View(await _context.MathCalculations.Where(m => m.FirebaseUuid.Equals(token)).ToListAsync());
         }
 
-        public async Task<IActionResult> Clear()
+
+        public IActionResult Clear()
         {
             var token = HttpContext.Session.GetString("currentUser");
             if (token == null)
@@ -106,8 +119,8 @@ namespace MathApp.Controllers
                 return RedirectToAction("Login", "Auth");
             }
 
-            _context.MathCalculations.RemoveRange(await _context.MathCalculations.ToListAsync<MathCalculation>());
-            await _context.SaveChangesAsync();
+            _context.MathCalculations.RemoveRange(_context.MathCalculations.Where(m => m.FirebaseUuid.Equals(token)));
+            _context.SaveChangesAsync();
 
             return RedirectToAction("History");
         }
