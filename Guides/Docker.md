@@ -46,7 +46,7 @@ Since we use sessions, we need a place to store the keys within our container.
         .SetApplicationName("MathApp");
 
     ```
-### Building you container
+### Building your container image
 Run this command in command prompt, which assumes you environment variables are setup:
 ```
 docker build --build-arg FirebaseMathApp=%FirebaseMathApp% --build-arg Math_DB=%Math_DB_Docker% -t mathapp-image . 
