@@ -111,7 +111,7 @@ namespace MathApp.Controllers
         }
 
 
-        public IActionResult Clear()
+        public async Task<IActionResult> Clear()
         {
             var token = HttpContext.Session.GetString("currentUser");
             if (token == null)
@@ -119,9 +119,10 @@ namespace MathApp.Controllers
                 return RedirectToAction("Login", "Auth");
             }
 
-            _context.MathCalculations.RemoveRange(_context.MathCalculations.Where(m => m.FirebaseUuid.Equals(token)));
-            _context.SaveChangesAsync();
+            var recordsToDelete = _context.MathCalculations.Where(m => m.FirebaseUuid.Equals(token));
+            _context.MathCalculations.RemoveRange(recordsToDelete);
 
+            await _context.SaveChangesAsync();
             return RedirectToAction("History");
         }
     }
