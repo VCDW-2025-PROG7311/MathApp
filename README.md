@@ -37,3 +37,4 @@ It is highly recommended that you follow these steps in order:
 1. [Ensuring no divide by 0 using a Factory Design Pattern](/Guides/NoDivideZeroFactory.md)
 1. [Amending the code to cater for calculations per user](/Guides/AmendingCodeToCalcPerUser.md)
 1. [Amending the menu buttons for our auth](/Guides/CustomizingMenuForAuth.md)
+1. [Adding containerization using Dockerfile](/Guides/Docker.md)
