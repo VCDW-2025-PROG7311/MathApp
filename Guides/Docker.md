@@ -29,7 +29,7 @@ See this: https://medium.com/@vedkoditkar/connect-to-local-ms-sql-server-from-do
 I would make a new connection string environment variable called `Math_DB_Docker`.
 It would look like this:
 ```
-""Server=host.docker.internal,1433;Database=Math_DB;User Id=docker;password={your password};Encrypt=True;TrustServerCertificate=True;"
+"Server=host.docker.internal,1433;Database=Math_DB;User Id=docker;password={your password};Encrypt=True;TrustServerCertificate=True;"
 ```
 ### Adding session fix
 Since we use sessions, we need a place to store the keys within our container.
