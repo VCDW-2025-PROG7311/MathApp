@@ -53,6 +53,12 @@ docker build --build-arg FirebaseMathApp=%FirebaseMathApp% --build-arg Math_DB=%
 ```
 Note: to test you can use ```echo %Math_DB_Docker%``` before running the command.
 
+Troubleshooting: If your environment variables not pull into the container from Windows, try this command.
+```
+docker build --build-arg FirebaseMathApp=$env:FirebaseMathApp --build-arg Math_DB=$env:Math_DB_Docker -t mathapp-image `
+```
+Credit to: Devesh Gokul, Vivek Rajaram and Aveshan Pillay (thank you!)
+
 ### Running you container
 Run your container:
 1. Mount the keys volume
